@@ -1,3 +1,4 @@
+import LeftPanel from "@/components/LeftPanel";
 import Sidebar from "@/components/Sidebar";
 
 export default function ChatPage() {
@@ -9,7 +10,9 @@ export default function ChatPage() {
         </div>
 
         {/* LEFT PANEL */}
-        <div className="h-full w-[200px] bg-blue-200"></div>
+        <div className="h-full w-[250px]">
+          <LeftPanel />
+        </div>
 
         {/* MAIN SECTION */}
         <div className="h-full flex-grow p-10">
