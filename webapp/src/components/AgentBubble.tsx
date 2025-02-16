@@ -43,5 +43,4 @@ export default function AgentBubble({name, iconName, selected}:AgentBubblePropsI
             </TooltipProvider>
         </div>
     );
-  }
-  
+}

@@ -36,5 +36,4 @@ export default function ModelCard({name, lastCommitMsg, lastCommitTimestamp, dep
             </div>
         </div>
     );
-  }
-  
+}
