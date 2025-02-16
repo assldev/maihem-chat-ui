@@ -6,36 +6,40 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/t
 const getAgentsListFromContext = () => {
     return [
         {
-            "id": "e4a4c8b2f9",
+            "id": "a_e4a4c8b2f9",
             "name": 'Customer Service Bot',
             "icon": 'MessageCircle'
         }, {
-            "id": "7d1d5a3c9b",
+            "id": "a_7d1d5a3c9b",
             "name": 'Mortgage Inquiry Bot',
             "icon": 'House'
         }, {
-            "id": "6b2c8a4f0e",
+            "id": "a_6b2c8a4f0e",
             "name": 'Investment Advisory Bot',
             "icon": 'TrendingUp'
         }, {
-            "id": "9a3b5c7d1e",
+            "id": "a_9a3b5c7d1e",
             "name": 'Fraud Prevention and Security Bot',
             "icon": 'Shield'
         }, {
-           "id": "2c5b8a1d9f",
+           "id": "a_2c5b8a1d9f",
             "name": 'Premium Client Concierge Bot',
             "icon": 'Star'
         }
     ];
 }
 
-const getActiveAgentIdFromContext = () => {
-    return "7d1d5a3c9b";
+const getActiveAgentFromContext = () => {
+    return {
+        "id": "a_7d1d5a3c9b",
+        "name": 'Mortgage Inquiry Bot',
+        "icon": 'House'
+    };
 }
 
 const getUserInfoFromContext = () => {
     return {
-        "id": "8f4e2d6c0b",
+        "id": "u_8f4e2d6c0b",
         "name": "Akshit Singla",
         "email": "akshit@maihem.ai",
         "initials": "AK",
@@ -46,7 +50,7 @@ const getUserInfoFromContext = () => {
 export default function Sidebar() {
 
     const agents = getAgentsListFromContext();
-    const activeAgentId = getActiveAgentIdFromContext();
+    const activeAgent = getActiveAgentFromContext();
     const userInfo = getUserInfoFromContext();
 
     return (
@@ -60,7 +64,7 @@ export default function Sidebar() {
             <div className="flex-grow flex flex-col items-center gap-3">
                 <h1 className="text-xs text-muted-foreground font-bold text-center">AI AGENTS</h1>
                 {agents.map((agent) => (
-                    <AgentBubble name={agent.name} iconName={agent.icon} selected={activeAgentId == agent.id}/>
+                    <AgentBubble name={agent.name} iconName={agent.icon} selected={activeAgent.id == agent.id}/>
                 ))}
             </div>
             
