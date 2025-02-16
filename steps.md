@@ -55,6 +55,6 @@
     - Github Actions workflows for `UAT` and `PRD` environments (in Vercel). ONLY `PRD` IMPLEMENTED FOR THIS EXERCISE.
 
 # Future Scope
-- Integrations: Database, Analytics, Emailing Service, etc.
+- Integrations: Authentication, Database, Analytics, Emailing Service, etc.
 - Responsive UI (mobile view)
 - UI rendering optimizations: SSG (Static-site generation), ISR (Incremental static regeneration), SSR (Server-side rendering), CSR (Client-side rendering)
