@@ -17,8 +17,15 @@ docker run -it --rm \
 ```
 - Start local server in dev mode
 ```sh
-# START APP IN DEV MODE
 npm run dev
+```
+- Install shadcn components
+```sh
+# RE-ENTER DOCKER CONTAINER
+docker exec -it maihemchatui /bin/bash
+
+# INSTALL shadcn/ui COMPONENT(S)
+npx shadcn@latest add button
 ```
 
 # Build
