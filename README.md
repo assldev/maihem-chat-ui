@@ -19,13 +19,16 @@ docker run -it --rm \
 ```sh
 npm run dev
 ```
-- Install shadcn components
+- Install npm dependencies
 ```sh
 # RE-ENTER DOCKER CONTAINER
 docker exec -it maihemchatui /bin/bash
 
 # INSTALL shadcn/ui COMPONENT(S)
 npx shadcn@latest add button
+
+# INSTALL OTHER DEPENDENCIES
+npm install openai
 ```
 
 # Build
