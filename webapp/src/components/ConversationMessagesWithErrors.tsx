@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MessageErrorsAccordion } from "./MessageErrorsAccordion";
 import { Button } from "./ui/button";
 import { Save } from "lucide-react";
@@ -15,8 +15,24 @@ export default function ConversationMessagesWithErrors() {
         setCommentVisiblity(!isCommentVisible);
     }
 
+    const messagesEndRef = useRef(null);
+    const messageListRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (messagesEndRef.current && messageListRef.current) {
+            messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+        }
+    }, []);
+    
+    useEffect(() => {
+        if (messagesEndRef.current && messageListRef.current) {
+            messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+        }
+    }, [conversationMessages]);
+
+
     return (
-        <>
+        <div ref={messageListRef} className="overflow-y-auto">
             {conversationMessages && conversationMessages.map((message) => (
                 <>
                     {message.senderType == "user" &&
@@ -67,9 +83,7 @@ export default function ConversationMessagesWithErrors() {
                     }
                 </>
             ))}
-            
-            
-            
-        </>
+            <div ref={messagesEndRef} />
+        </div>
     )
 }
