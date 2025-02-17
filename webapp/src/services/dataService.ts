@@ -1,4 +1,4 @@
-import { getDbInstance } from "@/controllers/dbControllerFactory";
+import { getDbInstance } from "@/controllers/db/dbControllerFactory";
 import { Agent, AiModel, AiOrUserConversationMessage, Conversation, ConversationEvalReport, UserInfo } from "@/models/ui";
 
 const dbController = getDbInstance();

@@ -1,5 +1,5 @@
 import { AgentDBInterface, AiModelDBInterface, ConversationDBInterface, ConversationEvalReportDBInterface, ConversationMessageDBInterface, UserInfoDBInterface } from "@/models/db";
-import { dbConfig } from "../configs/appConfig";
+import { dbConfig } from "@/configs/appConfig";
 import mockDbController from "./mockDbController";
 
 export interface DbControllerInterface {
