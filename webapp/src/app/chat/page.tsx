@@ -17,7 +17,7 @@ export default function ChatPage() {
     const {initializeChatContext} = useChatContext();
 
     useEffect(() => {
-      initializeChatContext();
+      initializeChatContext("USER_ID_WILL_GO_HERE");
       setIsContextInitialized(true);
     }, []);
 
