@@ -87,3 +87,24 @@ body {
 .bg-light-gray {
   background-color: #E6E6E6;
 }
+
+.bg-green-btn {
+  @apply bg-green-500;
+  color: white;
+}
+
+.txt-blue-link {
+  @apply text-blue-500
+}
+
+.bg-light-green {
+  background-color: #DCF8C6;
+}
+
+.txt-green-pass {
+  @apply text-green-800
+}
+
+.txt-red-fail {
+  @apply text-red-600
+}

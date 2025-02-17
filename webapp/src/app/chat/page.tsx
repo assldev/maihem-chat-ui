@@ -1,4 +1,5 @@
 import LeftPanel from "@/components/LeftPanel";
+import RightPanel from "@/components/RightPanel";
 import Sidebar from "@/components/Sidebar";
 
 export default function ChatPage() {
@@ -28,7 +29,9 @@ export default function ChatPage() {
         </div>
 
         {/* RIGHT PANEL */}
-        <div className="h-full w-[200px] bg-blue-200"></div>
+        <div className="h-full w-[300px]">
+          <RightPanel />
+        </div>
       </div>
     );
   }
