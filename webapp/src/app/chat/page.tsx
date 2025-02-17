@@ -4,7 +4,7 @@ import RightPanel from "@/components/RightPanel";
 import Sidebar from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import UserChatInput from "@/components/UserChatInput";
-import { Plus, ZoomIn, ZoomOut } from "lucide-react";
+import { Layers, Plus, ZoomIn, ZoomOut } from "lucide-react";
 
 export default function ChatPage() {
     return (
@@ -19,7 +19,8 @@ export default function ChatPage() {
         <div className="h-full w-full flex-grow p-4 bg-light-gray overflow-hiddeb flex flex-col items-center">
 
           {/* NEW CHAT BUTTON */}
-          <div className="py-2">
+          <div className="py-2 flex gap-4">
+                <Button variant="secondary"><Layers />Run Test Suite</Button>
                 <Button><Plus />New Chat</Button>
           </div>
 
