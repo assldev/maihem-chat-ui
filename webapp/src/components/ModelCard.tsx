@@ -1,4 +1,7 @@
+import { useState } from "react"
+
 interface ModelCardPropsInterface {
+    id: string,
     name: string,
     lastCommitMsg: string,
     lastCommitTimestamp: string,
@@ -23,9 +26,32 @@ const getDeploymentStatusPill = (deploymentStatus:string) => {
     }
 }
 
-export default function ModelCard({name, lastCommitMsg, lastCommitTimestamp, deploymentStatus, selected}:ModelCardPropsInterface) {
+const updateSelectedModelInContext = (modelId:string) => {
+    // SELECT MODEL IN CONTEXT
+}
+
+export default function ModelCard({id, name, lastCommitMsg, lastCommitTimestamp, deploymentStatus, selected}:ModelCardPropsInterface) {
+    const [isHovering, setIsHovering] = useState<boolean>(false);
+  
+    const handleMouseEnter = () => {
+      setIsHovering(true);
+    };
+  
+    const handleMouseLeave = () => {
+      setIsHovering(false);
+    };
+
+    const handleOnClick = () => {
+        updateSelectedModelInContext(id);
+    };
+
     return (
-        <div className={`flex flex-col gap-1 rounded-md border-2 p-2 ${selected && 'bg-light-gray'}`}>
+        <div 
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onClick={handleOnClick}
+            className={`flex flex-col gap-1 rounded-md border-2 p-2 cursor-pointer ${ (selected || isHovering) && 'bg-light-gray'}`}
+        >
             <div className="flex gap-1">
                 {deploymentStatus && getDeploymentStatusPill(deploymentStatus)}
                 <p className="text-sm">{name}</p>

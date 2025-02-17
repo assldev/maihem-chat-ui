@@ -108,6 +108,7 @@ export default function LeftPanel() {
             <div className="px-4 flex-grow flex flex-col gap-2 overflow-y-scroll">
                 {modelsList.map((model) => (
                     <ModelCard 
+                        id={model.id}
                         name={model.name}
                         lastCommitMsg={model.lastCommitMsg}
                         lastCommitTimestamp={model.lastCommitTimestamp}
