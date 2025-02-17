@@ -122,5 +122,6 @@ export interface ChatContextInterface {
     aiModels: AiModel[]|null,
     activeAiModel: AiModel|null,
     conversationMessages: AiOrUserConversationMessage[]|null,
-    conversationEvalReport: ConversationEvalReport|null
+    conversationEvalReport: ConversationEvalReport|null,
+    initializeChatContext: ()=>void
 }

@@ -1,15 +1,31 @@
+"use client";
+
 import ConversationMessagesWithErrors from "@/components/ConversationMessagesWithErrors";
 import LeftPanel from "@/components/LeftPanel";
 import RightPanel from "@/components/RightPanel";
 import Sidebar from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import UserChatInput from "@/components/UserChatInput";
-import { ChatContextProvider } from "@/contexts/ChatContext";
+import { useChatContext } from "@/contexts/ChatContext";
 import { Layers, Plus, ZoomIn, ZoomOut } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function ChatPage() {
+
+    const [isContextInitialized, setIsContextInitialized] = useState<boolean>(false);
+
+    const {initializeChatContext} = useChatContext();
+
+    useEffect(() => {
+      initializeChatContext();
+      setIsContextInitialized(true);
+    }, []);
+
+    if (!isContextInitialized) {
+      return null;
+    }
+
     return (
-      <ChatContextProvider>
       <div className="w-full h-full flex">
         {/* SIDEBAR */}
         <Sidebar />
@@ -70,6 +86,5 @@ export default function ChatPage() {
         {/* RIGHT PANEL */}
         <RightPanel />
       </div>
-      </ChatContextProvider>
     );
 }

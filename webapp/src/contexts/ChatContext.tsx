@@ -12,19 +12,30 @@ const ChatContext = createContext<ChatContextInterface>({
     "activeAiModel": null,
     "conversationMessages": null,
     "conversationEvalReport": null,
+    "initializeChatContext": ()=>{}
 });
 
 export const ChatContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [userInfo, setUserInfo] = useState<UserInfo|null>(getUserInfoFromContext());
-  const [agents, setAgents] = useState<Agent[]|null>(getAgentsListFromContext());
-  const [activeAgent, setActiveAgent] = useState<Agent|null>(getActiveAgentFromContext());
-  const [aiModels, setAiModels] = useState<AiModel[]|null>(getModelsFromContext());
-  const [activeAiModel, setActiveAiModel] = useState<AiModel|null>(getActiveModelFromContext());
-  const [conversationMessages, setConversationMessages] = useState<AiOrUserConversationMessage[]|null>(getConversationFromContext());
-  const [conversationEvalReport, setConversationEvalReport] = useState<ConversationEvalReport|null>(getConversationEvalReportFromContext());
+  const [userInfo, setUserInfo] = useState<UserInfo|null>(null);
+  const [agents, setAgents] = useState<Agent[]|null>(null);
+  const [activeAgent, setActiveAgent] = useState<Agent|null>(null);
+  const [aiModels, setAiModels] = useState<AiModel[]|null>(null);
+  const [activeAiModel, setActiveAiModel] = useState<AiModel|null>(null);
+  const [conversationMessages, setConversationMessages] = useState<AiOrUserConversationMessage[]|null>(null);
+  const [conversationEvalReport, setConversationEvalReport] = useState<ConversationEvalReport|null>(null);
+
+  const initializeChatContext = () => {
+    setUserInfo(getUserInfoFromContext())
+    setAgents(getAgentsListFromContext())
+    setActiveAgent(getActiveAgentFromContext())
+    setAiModels(getModelsFromContext())
+    setActiveAiModel(getActiveModelFromContext())
+    setConversationMessages(getConversationFromContext())
+    setConversationEvalReport(getConversationEvalReportFromContext())
+  }
   
   return (
-    <ChatContext.Provider value={{ userInfo, agents, activeAgent, aiModels, activeAiModel, conversationMessages, conversationEvalReport }}>
+    <ChatContext.Provider value={{ userInfo, agents, activeAgent, aiModels, activeAiModel, conversationMessages, conversationEvalReport, initializeChatContext }}>
       {children}
     </ChatContext.Provider>
   );
