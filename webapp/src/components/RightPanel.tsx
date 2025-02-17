@@ -1,6 +1,9 @@
-import { ChevronsRight } from "lucide-react";
+'use client';
+
+import { ChevronsLeft, ChevronsRight } from "lucide-react";
 import QuickActionsMenu from "./QuickActionsMenu";
 import ConversationEvalReport from "./ConversationEvalReport";
+import { useState } from "react";
 
 const approveReviewMenu = {
     "header": 'APPROVE / REJECT',
@@ -70,8 +73,23 @@ const shareMenu = {
 } 
 
 export default function RightPanel() {
+
+    const [expanded, setExpanded] = useState<boolean>(true);
+
+    const handleCollapseRequest = () => {
+        setExpanded(!expanded);
+    }
+
     return (
-        <div className="w-full h-full flex flex-col">
+        <div className={`h-full flex flex-col overflow-hidden transition-all ${expanded && "w-[25%] max-w-[500px] gap-4 pt-5"}`}>
+            
+            {!expanded ?
+             <div className="w-full h-full flex flex-col justify-center items-center gap-2 bg-light-green px-4">
+                <div className="text-3xl">87</div>
+                <div className="text-sm">/100</div>
+                <div className="text-base font-bold txt-green-pass">PASS</div>
+            </div>
+            :
             <div className="w-full h-full flex flex-col gap-2 pt-2 overflow-y-scroll">
                 {/* APPROVE / REVIEW */}
                 <div className="px-4">
@@ -93,10 +111,13 @@ export default function RightPanel() {
                     <QuickActionsMenu header={shareMenu.header} menuItems={shareMenu.menuItems} />
                 </div>
             </div>
+            }
 
             {/* COLLAPSE */}
-            <div className="w-full py-4 flex justify-center text-muted-foreground border-t-2">
-                Collapse <ChevronsRight />
+            <div className="w-full py-4 border-t-2">
+                <button className="w-full h-full flex justify-center text-muted-foreground" onClick={handleCollapseRequest}>
+                    {expanded ? <>Collapse <ChevronsRight /></> : <ChevronsLeft />}
+                </button>
             </div>
         </div>
     );

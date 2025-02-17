@@ -30,7 +30,10 @@ export default function ChatPage() {
               {/* LINE MARKER TO SHOW START OF ERROR MESSAGES */}
               <div className="w-full flex">
                 <div className="w-[50%] h-[100px] pr-[40px]">
-                  <h2 className="w-full h-full flex flex-col justify-center items-center text-xl font-bold">Message Errors</h2>
+                  <div className="w-full h-full flex flex-col justify-center items-center">
+                    <h2 className="text-xl font-bold">Message Errors</h2>
+                    <h3 className="text-sm italic">(Total 37 errors)</h3>
+                  </div>
                   <div className="w-full h-[1px] bg-dark-gray"/>
                 </div>
               </div>
@@ -64,9 +67,7 @@ export default function ChatPage() {
         </div>
 
         {/* RIGHT PANEL */}
-        <div className="h-full w-[25%] max-w-[500px]">
-          <RightPanel />
-        </div>
+        <RightPanel />
       </div>
     );
 }
