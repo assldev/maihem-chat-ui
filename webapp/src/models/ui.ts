@@ -128,5 +128,6 @@ export interface ChatContextInterface {
     activeAiModel: AiModel|null,
     conversationMessages: AiOrUserConversationMessage[]|null,
     conversationEvalReport: ConversationEvalReport|null,
-    initializeChatContext: (userId:string)=>void
+    initializeChatContext: (userId:string)=>void,
+    addChatMessage: (chatMessage:UserConversationMessage|AiConversationMessage)=>void
 }

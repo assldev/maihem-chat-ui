@@ -1,9 +1,8 @@
 'use client';
 
-import { ChatContextInterface, UserInfo, Agent, AiModel, AiOrUserConversationMessage, ConversationEvalReport } from '@/models/ui';
+import { ChatContextInterface, UserInfo, Agent, AiModel, AiOrUserConversationMessage, ConversationEvalReport, UserConversationMessage, AiConversationMessage } from '@/models/ui';
 import { getAgentsForUser, getConversationMessagesForConversation, getConversationEvalReportForConversation, getConversationsForModel, getModelsForAgent, getUserInfo } from '@/services/dataService';
 import React, { createContext, useState, ReactNode, useContext } from 'react';
-
 
 const ChatContext = createContext<ChatContextInterface>({
     "userInfo": null,
@@ -13,7 +12,8 @@ const ChatContext = createContext<ChatContextInterface>({
     "activeAiModel": null,
     "conversationMessages": null,
     "conversationEvalReport": null,
-    "initializeChatContext": (string)=>{}
+    "initializeChatContext": (string)=>{},
+    "addChatMessage": ({})=>{}
 });
 
 export const ChatContextProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -56,9 +56,23 @@ export const ChatContextProvider: React.FC<{ children: ReactNode }> = ({ childre
     const _conversationEvalReport = getConversationEvalReportForConversation(_activeConversation.id);
     setConversationEvalReport(_conversationEvalReport);
   }
+
+  const addChatMessage = (chatMessage:UserConversationMessage|AiConversationMessage) => {
+    console.log(`adding to context:`);
+    console.log(chatMessage);
+    console.log(conversationMessages);
+
+    setConversationMessages((conversationMessages) => {
+      if (conversationMessages === null) {
+        return([chatMessage]);
+      } else {
+        return([...conversationMessages, chatMessage]);
+      }
+    });
+  }
   
   return (
-    <ChatContext.Provider value={{ userInfo, agents, activeAgent, aiModels, activeAiModel, conversationMessages, conversationEvalReport, initializeChatContext }}>
+    <ChatContext.Provider value={{ userInfo, agents, activeAgent, aiModels, activeAiModel, conversationMessages, conversationEvalReport, initializeChatContext, addChatMessage }}>
       {children}
     </ChatContext.Provider>
   );
