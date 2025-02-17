@@ -22,7 +22,7 @@ export default function LeftPanel() {
             {!expanded ? 
             <div className="w-full flex-grow flex flex-col justify-center items-center gap-2">
                 {Array.from("MODELS").map((character) => (
-                    <span className="px-4 text-xs text-muted-foreground font-bold">{character.toUpperCase()}</span>
+                    <span className="px-4 text-xs text-muted-foreground font-bold" key={character}>{character.toUpperCase()}</span>
                 ))}
             </div>
             :
@@ -37,6 +37,7 @@ export default function LeftPanel() {
             <div className="px-4 flex-grow flex flex-col gap-2 overflow-y-scroll">
                 {aiModels && aiModels.map((model) => (
                     <ModelCard 
+                        key={model.id}
                         id={model.id}
                         name={model.name}
                         lastCommitMsg={model.lastCommitMsg}

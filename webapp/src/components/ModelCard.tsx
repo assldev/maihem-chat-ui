@@ -20,6 +20,7 @@ const getDeploymentStatusPill = (deploymentStatus:string) => {
 
 const updateSelectedModelInContext = (modelId:string) => {
     // SELECT MODEL IN CONTEXT
+    alert(`Implementation Skipped for this exercise: SELECT_MODEL_WITH_ID_${modelId}`);
 }
 
 export default function ModelCard({id, name, lastCommitMsg, lastCommitTimestamp, deploymentStatus, selected}:ModelCardPropsInterface) {

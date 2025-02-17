@@ -46,7 +46,7 @@ export function MessageErrorsAccordion({msgId, errors, commentViewToggle}:Messag
     return (
       <Accordion type="single" collapsible className="w-full text-sm">
         {errors && errors.map((errorObj) => (
-            <AccordionItem value={`${msgId}_${errorObj.metricID}`} className="rounded-md mb-1">
+            <AccordionItem value={`${msgId}_${errorObj.metricID}`} key={`${msgId}_${errorObj.metricID}`} className="rounded-md mb-1">
 
                 {/* METRIC LABEL + SCORE */}
                 <AccordionTrigger className="rounded-xl bg-light-red px-2">

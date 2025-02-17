@@ -27,6 +27,7 @@ const getIcon = (iconName:string) => {
 
 const updateSelectedAgentInContext = (agentId:string) => {
     // SELECT AGENT IN CONTEXT
+    alert(`Implementation Skipped for this exercise: SELECT_AGENT_WITH_ID_${agentId}`);
 }
 
 export default function AgentItem({id, name, iconName, selected, expanded}:AgentItemPropsInterface) {

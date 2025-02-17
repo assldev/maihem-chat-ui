@@ -12,7 +12,7 @@ const ChatContext = createContext<ChatContextInterface>({
     "activeAiModel": null,
     "conversationMessages": null,
     "conversationEvalReport": null,
-    "initializeChatContext": (string)=>{},
+    "initializeChatContext": ()=>{},
     "addChatMessage": ({})=>{}
 });
 

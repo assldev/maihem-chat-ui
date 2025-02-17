@@ -11,7 +11,7 @@ export function ConversationErrorsAccordion({errors}:ConversationErrorsAccordion
     return (
       <Accordion type="single" collapsible className="w-full bg-white text-sm">
         {errors.map((errorObj) => (
-            <AccordionItem value={errorObj.metricId}>
+            <AccordionItem key={errorObj.metricId} value={errorObj.metricId}>
                 <AccordionTrigger>
                     <div className="flex items-start gap-1">
                         {errorObj.hasFailed ? <X className="txt-red-fail" /> : <Check className="txt-green-pass" />}

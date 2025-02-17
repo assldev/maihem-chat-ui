@@ -36,7 +36,7 @@ export default function Sidebar() {
             <div className="flex-grow flex flex-col justify-start gap-3 px-1">
                 <h1 className={`w-full text-xs text-muted-foreground font-bold ${!isHovering ? "text-center" : "px-4"}`}>AI AGENTS</h1>
                 {agents && agents.map((agent) => (
-                    <AgentItem id={agent.id} name={agent.name} iconName={agent.icon} selected={activeAgent!.id == agent.id} expanded={isHovering}/>
+                    <AgentItem key={agent.id} id={agent.id} name={agent.name} iconName={agent.icon} selected={activeAgent!.id == agent.id} expanded={isHovering}/>
                 ))}
             </div>
             

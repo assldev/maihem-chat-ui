@@ -19,7 +19,7 @@ export default function ChatPage() {
     useEffect(() => {
       initializeChatContext("USER_ID_WILL_GO_HERE");
       setIsContextInitialized(true);
-    }, []);
+    });
 
     if (!isContextInitialized) {
       return null;
