@@ -72,6 +72,11 @@ export interface AiModel {
     "deploymentStatus": string|null
 }
 
+export interface Conversation {
+    "id": string;
+    "messages": AiOrUserConversationMessage[]
+}
+
 export interface UserInfo {
     "id": string,
     "name": string,
@@ -123,5 +128,5 @@ export interface ChatContextInterface {
     activeAiModel: AiModel|null,
     conversationMessages: AiOrUserConversationMessage[]|null,
     conversationEvalReport: ConversationEvalReport|null,
-    initializeChatContext: ()=>void
+    initializeChatContext: (userId:string)=>void
 }
