@@ -10,9 +10,7 @@ export default function ChatPage() {
     return (
       <div className="w-full h-full flex">
         {/* SIDEBAR */}
-        <div className="h-full w-[60px]">
-          <Sidebar />
-        </div>
+        <Sidebar />
 
         {/* LEFT PANEL */}
         <LeftPanel />
