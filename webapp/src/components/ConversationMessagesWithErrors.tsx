@@ -1,4 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import { MessageErrorsAccordion } from "./MessageErrorsAccordion";
+import { Button } from "./ui/button";
+import { Save } from "lucide-react";
 
 const getConversationFromContext = () => {
     return [{
@@ -197,7 +202,13 @@ const getConversationFromContext = () => {
 
 export default function ConversationMessagesWithErrors() {
 
+    const [isCommentVisible, setCommentVisiblity] = useState<boolean>(false);
+
     const messages = getConversationFromContext();
+
+    const toggleCommentView = () => {
+        setCommentVisiblity(!isCommentVisible);
+    }
 
     return (
         <>
@@ -225,7 +236,14 @@ export default function ConversationMessagesWithErrors() {
                             {/* ERRORS (IF ANY) */}
                             <div className="w-[50%] pr-[40px]">
                                 <div className="w-full bg-white p-2 rounded-lg">
-                                    <MessageErrorsAccordion msgId={message.id} errors={message.errors} />
+                                    <MessageErrorsAccordion msgId={message.id} errors={message.errors} commentViewToggle={toggleCommentView} />
+                                    <span className="text-sm italic">Response Delay: {message.delayInSeconds}s</span>
+                                    {isCommentVisible && 
+                                        <>
+                                            <textarea rows={2} placeholder="Add your comment here" className="w-full border-gray-100 p-1 text-xs" />
+                                            <Button variant="outline"><Save /></Button>
+                                        </>
+                                    }
                                 </div>
                             </div>
                             {/* AI MESSAGE */}

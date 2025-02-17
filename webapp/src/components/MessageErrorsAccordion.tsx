@@ -27,7 +27,8 @@ interface AiMessageError {
 
 interface MessageErrorsAccordionPropInterface {
     msgId: string,
-    errors:AiMessageError[]|undefined
+    errors:AiMessageError[]|undefined,
+    commentViewToggle: () => void
 }
 
 const getIcon = (iconName:string) => {
@@ -64,7 +65,7 @@ const getIconNameFromMetricId = (metricId:string) => {
     }
 }
   
-export function MessageErrorsAccordion({msgId, errors}:MessageErrorsAccordionPropInterface) {
+export function MessageErrorsAccordion({msgId, errors, commentViewToggle}:MessageErrorsAccordionPropInterface) {
     return (
       <Accordion type="single" collapsible className="w-full text-sm">
         {errors && errors.map((errorObj) => (
@@ -90,7 +91,7 @@ export function MessageErrorsAccordion({msgId, errors}:MessageErrorsAccordionPro
                                 <Button className="px-1 txt-red-fail" variant="link"><Layers /></Button>
                                 <Button className="px-1 txt-red-fail" variant="link"><BellPlus /></Button>
                                 <Button className="px-1 txt-red-fail" variant="link"><Flag /></Button>
-                                <Button className="px-1 txt-red-fail" variant="link"><MessageSquare /></Button>
+                                <Button className="px-1 txt-red-fail" variant="link" onClick={commentViewToggle}><MessageSquare /></Button>
                             </div>
 
                             {/* USER FEEDBACK */}
