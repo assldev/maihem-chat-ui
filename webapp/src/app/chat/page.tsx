@@ -4,10 +4,12 @@ import RightPanel from "@/components/RightPanel";
 import Sidebar from "@/components/Sidebar";
 import { Button } from "@/components/ui/button";
 import UserChatInput from "@/components/UserChatInput";
+import { ChatContextProvider } from "@/contexts/ChatContext";
 import { Layers, Plus, ZoomIn, ZoomOut } from "lucide-react";
 
 export default function ChatPage() {
     return (
+      <ChatContextProvider>
       <div className="w-full h-full flex">
         {/* SIDEBAR */}
         <Sidebar />
@@ -68,5 +70,6 @@ export default function ChatPage() {
         {/* RIGHT PANEL */}
         <RightPanel />
       </div>
+      </ChatContextProvider>
     );
 }
