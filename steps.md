@@ -58,3 +58,5 @@
 - Integrations: Authentication, Database, Analytics, Emailing Service, etc.
 - Responsive UI (mobile view)
 - UI rendering optimizations: SSG (Static-site generation), ISR (Incremental static regeneration), SSR (Server-side rendering), CSR (Client-side rendering)
+- Draft email generation from comments, errors, etc.
+- Integrations with other tools like Github, Jira, Confluence, etc.
