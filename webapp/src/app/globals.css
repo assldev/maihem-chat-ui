@@ -77,15 +77,12 @@ body {
   }
 }
 
-.wa-frame {
-  background-image: url("/Whatsapp_Frame.png");
-  background-repeat: no-repeat; /* Prevent the image from tiling */
-  background-position: right; /* Position the image on the right */
-  background-size: auto 100%; /* Key adjustment */
-}
-
 .bg-light-gray {
   background-color: #E6E6E6;
+}
+
+.bg-dark-gray {
+  @apply bg-gray-500
 }
 
 .bg-green-btn {
@@ -93,12 +90,21 @@ body {
   color: white;
 }
 
-.txt-blue-link {
-  @apply text-blue-500
-}
-
 .bg-light-green {
   background-color: #DCF8C6;
+}
+
+.bg-dark-green {
+  background-color: #075E54;
+  color: #FFFFFF;
+}
+
+.bg-light-red {
+  @apply bg-red-100;
+}
+
+.txt-light-red {
+  @apply text-red-300;
 }
 
 .txt-green-pass {
@@ -107,4 +113,28 @@ body {
 
 .txt-red-fail {
   @apply text-red-600
+}
+
+.txt-blue-link {
+  @apply text-blue-500
+}
+
+.wa-frame {
+  background-image: url("/Whatsapp_Frame.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+.user-message {
+  @apply relative rounded-md p-2 text-sm;
+  background-color: #DCF8C6;
+}
+
+.user-message-callout {
+  fill: #DCF8C6;
+}
+
+.ai-message-callout {
+  fill: #FFFFFF;
 }
