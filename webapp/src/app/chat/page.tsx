@@ -15,9 +15,7 @@ export default function ChatPage() {
         </div>
 
         {/* LEFT PANEL */}
-        <div className="h-full w-[25%] max-w-[500px]">
-          <LeftPanel />
-        </div>
+        <LeftPanel />
 
         {/* MAIN SECTION */}
         <div className="h-full w-full flex-grow p-4 bg-light-gray overflow-hiddeb flex flex-col items-center">
