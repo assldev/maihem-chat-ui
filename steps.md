@@ -17,7 +17,7 @@
 - Wireframes / Page Layouts
 > https://www.figma.com/board/gdp9kWPmC4uLLOebgO33i1/maihem-chat-ui?node-id=19-248&t=sf7BpifNCoPfVy5X-4
 - Design Iterations
-> TODO: design-decisions.md
+> [design-decisions.md](./design-decisions.md)
 - ⁠Mockup 
 > https://www.figma.com/design/1CvrnGAnsa4QvIaXdl6zoe/maihem-chat-ui-mockup?node-id=2-287&t=9qWfOfr9yfsJpzVr-1
 
@@ -29,10 +29,6 @@
   - Rationale for Tailwind: ASSIGNMENT REQUIREMENT. 
   - Rationale for shadcn 2.3.0: https://www.figma.com/board/PYMpkOPFgRV6PotVSzAVkk/maihem-chat-ui-arch?node-id=2-27&t=5KgCnz9j5Lexgxte-4 
     - Latest stable version.
-- ⁠Modules
-> https://www.figma.com/board/PYMpkOPFgRV6PotVSzAVkk/maihem-chat-ui-arch?node-id=3-58&t=5KgCnz9j5Lexgxte-4 
-- Data Structure
-> https://www.figma.com/board/PYMpkOPFgRV6PotVSzAVkk/maihem-chat-ui-arch?node-id=3-83&t=5KgCnz9j5Lexgxte-4 
 - Deployment
   - Webapp: Vercel
   - DB: <mocked_in_frontend>
@@ -42,8 +38,8 @@
   - Code Versioning
     - `main`: Development branch.
     - `release/v...`: Contains code released in particular version. NOT USED FOR THIS EXECRISE.
-    - `uat`: Contains code that is LIVE (+ auto-deployed via CI/CD) in `UAT` environment.
-    - `production`: Contains code that is LIVE (+ auto-deployed via CI/CD) in `PRD` environment. NOT USED FOR THIS EXECRISE.
+    - `uat`: Contains code that is LIVE (+ auto-deployed via CI/CD) in `UAT` environment. NOT USED FOR THIS EXECRISE.
+    - `production`: Contains code that is LIVE (+ auto-deployed via CI/CD) in `PRD` environment. 
 - ⁠Implementation
   - Code available in `webapp/src/` folder
 
@@ -55,8 +51,28 @@
     - Github Actions workflows for `UAT` and `PRD` environments (in Vercel). ONLY `PRD` IMPLEMENTED FOR THIS EXERCISE.
 
 # Future Scope
-- Integrations: Authentication, Database, Analytics, Emailing Service, etc.
-- Responsive UI (mobile view)
-- UI rendering optimizations: SSG (Static-site generation), ISR (Incremental static regeneration), SSR (Server-side rendering), CSR (Client-side rendering)
-- Draft email generation from comments, errors, etc.
-- Integrations with other tools like Github, Jira, Confluence, etc.
+- Functional
+  - Responsive UI (mobile view)
+  - Draft email generation from comments, errors, etc.
+  - Integrations with other tools like Github, Jira, Confluence, etc.
+  - Change agent, model, conversation selections
+  - Integrations with Maihem
+  - ...
+- Technical
+  - Database
+  - ...
+- Safety & Security:
+  - User Input Validation
+  - Authentication
+  - Error handling - error codes, etc.
+  - ...
+- Architectural Improvements:
+  - UI rendering optimizations: SSG (Static-site generation), ISR (Incremental static regeneration), SSR (Server-side rendering), CSR (Client-side rendering)
+  - ...
+- Monitoring & Analytics
+  - User Analytics
+  - Debug Analytics
+  - ...
+- Maintenance
+  - Code comments
+  - Documentation - functional, architecture, etc.

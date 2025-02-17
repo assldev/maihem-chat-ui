@@ -30,11 +30,17 @@ npx shadcn@latest add button
 # INSTALL OTHER DEPENDENCIES
 npm install openai
 ```
+- Run `lint` tests
+```sh
+npm run lint
+```
 
 # Build
 ```sh
+npm run build
 ```
 
 # Run
 ```sh
+npm run start
 ```
