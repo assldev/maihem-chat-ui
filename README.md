@@ -3,6 +3,7 @@ This webapp serves as the submission to the technical exercise for Maihem's recr
 https://www.figma.com/board/gdp9kWPmC4uLLOebgO33i1/maihem-chat-ui?node-id=8-2148&t=sf7BpifNCoPfVy5X-4
 
 # Steps taken to accomplish this assignment
+> [steps.md](./steps.md)
 
 # Development
 - (Optional, recommended) Start `docker` container to avoid version conflicts.
