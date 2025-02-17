@@ -1,13 +1,5 @@
+import { ModelCardPropsInterface } from "@/models/ui"
 import { useState } from "react"
-
-interface ModelCardPropsInterface {
-    id: string,
-    name: string,
-    lastCommitMsg: string,
-    lastCommitTimestamp: string,
-    deploymentStatus: string|null,
-    selected: boolean
-}
 
 const getDeploymentStatusPill = (deploymentStatus:string) => {
     switch(deploymentStatus) {

@@ -1,14 +1,6 @@
 import { House, MessageCircle, Shield, Star, TrendingUp } from "lucide-react";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { Button } from "./ui/button";
-
-interface AgentItemPropsInterface {
-    id: string,
-    name: string,
-    iconName: string,
-    selected: boolean,
-    expanded: boolean
-}
+import { AgentItemPropsInterface } from "@/models/ui";
 
 const getIcon = (iconName:string) => {
     switch(iconName) {

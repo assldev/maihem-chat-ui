@@ -1,11 +1,6 @@
 import { BarChart3, Briefcase, CheckCircle, FileLineChart, FileSearch2, FileText, Github, Layers, Mail } from "lucide-react";
 import { Button } from "./ui/button"
-
-interface QuickActionMenuItemInterface {
-    isButton: boolean,
-    iconName: string,
-    label: string
-}
+import { QuickActionMenuItemInterface } from "@/models/ui";
 
 export interface QuickActionsMenuPropsInterface {
     header: string,

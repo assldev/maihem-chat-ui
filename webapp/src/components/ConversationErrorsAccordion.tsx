@@ -4,18 +4,8 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
+import { ConversationErrorsAccordionPropInterface } from "@/models/ui"
 import { Check, X } from "lucide-react"
-
-interface EvalReportError {
-    "metricId": string,
-    "metricLabel": string,
-    "hasFailed": boolean,
-    "explanation": string
-}
-
-interface ConversationErrorsAccordionPropInterface {
-    errors:EvalReportError[]
-}
   
 export function ConversationErrorsAccordion({errors}:ConversationErrorsAccordionPropInterface) {
     return (

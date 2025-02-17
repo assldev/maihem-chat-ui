@@ -6,30 +6,7 @@ import {
 } from "@/components/ui/accordion"
 import { BellPlus, Bug, Compass, Flag, Ghost, Layers, MessageSquare, ThumbsDown, ThumbsUp, UserCheck } from "lucide-react"
 import { Button } from "./ui/button"
-
-interface UserComments {
-    "commentId": string
-    "referenceType": string,
-    "referenceId": string,
-    "userId": string,
-    "content": string
-}
-
-interface AiMessageError {
-    "metricID": string,
-    "metricLabel": string,
-    "score": number,
-    "maxScore": number,
-    "explanation": string,
-    "isFlagged": boolean,
-    "comments": UserComments[]
-}
-
-interface MessageErrorsAccordionPropInterface {
-    msgId: string,
-    errors:AiMessageError[]|undefined,
-    commentViewToggle: () => void
-}
+import { MessageErrorsAccordionPropInterface } from "@/models/ui";
 
 const getIcon = (iconName:string) => {
     switch(iconName) {
